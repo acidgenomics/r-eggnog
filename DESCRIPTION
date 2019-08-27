@@ -1,6 +1,6 @@
 Package: EggNOG
 Title: EggNOG
-Description: EggNOG database annotations
+Description: EggNOG database annotations.
 Version: 0.1.0
 Date: 2019-08-27
 Authors@R: c(
@@ -30,6 +30,7 @@ Imports:
 Suggests:
     acidroxygen (>= 0.1),
     BiocStyle (>= 2.12),
+    knitr (>= 1.22),
     testthat (>= 2.2)
 Remotes:
     acidgenomics/basejump,
