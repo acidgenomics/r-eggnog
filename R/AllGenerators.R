@@ -91,10 +91,13 @@ EggNOG <-  # nolint
         annotations <- x
 
         ## Return --------------------------------------------------------------
-        data <- List(
+        data <- SimpleList(
             cogFunctionalCategories = categories,
             annotations = annotations
         )
-        metadata(data) <- .prototypeMetadata
+        metadata(data) <- list(
+            version = packageVersion("EggNOG"),
+            date = Sys.Date()
+        )
         new(Class = "EggNOG", data)
     }

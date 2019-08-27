@@ -1,0 +1,30 @@
+#' Show an object
+#' @name show
+#' @inherit methods::show
+#' @keywords internal
+#' @note Updated 2019-08-27.
+NULL
+
+
+
+## Updated 2019-08-18.
+`show,EggNOG` <-  # nolint
+    function(object) {
+        showHeader(object)
+        ids <- sort(object[["annotations"]][["eggnogID"]])
+        categories <- sort(object[["cogFunctionalCategories"]][["description"]])
+        showSlotInfo(list(
+            ids = ids,
+            categories = categories
+        ))
+    }
+
+
+
+#' @rdname show
+#' @export
+setMethod(
+    f = "show",
+    signature = signature("EggNOG"),
+    definition = `show,EggNOG`
+)
