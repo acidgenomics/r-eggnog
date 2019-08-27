@@ -26,7 +26,8 @@ Imports:
     goalie (>= 0.3.6),
     S4Vectors (>= 0.22),
     stringr (>= 1.4),
-    methods
+    methods,
+    utils
 Suggests:
     acidroxygen (>= 0.1),
     BiocStyle (>= 2.12),
