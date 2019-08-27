@@ -22,52 +22,18 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.6)
 Imports:
-    bioverbs (>= 0.2.7),
-    brio (>= 0.3.6),
-    freerange (>= 0.2.4),
+    basejump (>= 0.11.11),
     goalie (>= 0.3.6),
-    syntactic (>= 0.2.3),
-    transformer (>= 0.2.5),
-    AnnotationDbi (>= 1.46),
-    Biobase (>= 2.44),
-    BiocGenerics (>= 0.30),
-    BiocParallel (>= 1.18),
-    Biostrings (>= 2.52),
-    DelayedArray (>= 0.10),
-    DelayedMatrixStats (>= 1.6),
-    GenomeInfoDb (>= 1.20),
-    GenomicRanges (>= 1.36),
-    IRanges (>= 2.18.2),
     S4Vectors (>= 0.22),
-    SingleCellExperiment (>= 1.6),
-    SummarizedExperiment (>= 1.14),
-    biomaRt (>= 2.40),
-    Matrix (>= 1.2),
-    Matrix.utils (>= 0.9),
-    knitr (>= 1.22),
-    magrittr (>= 1.5),
-    matrixStats (>= 0.54),
-    scales (>= 1.0),
-    sessioninfo (>= 1.1),
     stringr (>= 1.4),
-    tibble (>= 2.1),
-    methods,
-    utils
+    methods
 Suggests:
     acidroxygen (>= 0.1),
     BiocStyle (>= 2.12),
-    patrick (>= 0.0.1),
     testthat (>= 2.2)
 Remotes:
-    acidgenomics/acidplots,
-    acidgenomics/acidroxygen,
-    acidgenomics/acidtest,
-    acidgenomics/bioverbs,
-    acidgenomics/brio,
-    acidgenomics/freerange,
-    acidgenomics/goalie,
-    acidgenomics/syntactic,
-    acidgenomics/transformer
+    acidgenomics/basejump,
+    acidgenomics/goalie
 biocViews:
     GenomeAnnotation
 Roxygen: list(markdown = TRUE)
