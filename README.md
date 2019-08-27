@@ -1,2 +1,3 @@
 # EggNOG
-EggNOG database annotations
+
+EggNOG database annotations.
