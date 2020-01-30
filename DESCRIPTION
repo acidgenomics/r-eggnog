@@ -18,7 +18,7 @@ URL:
     https://eggnog.acidgenomics.com/,
     https://github.com/acidgenomics/EggNOG/
 BugReports: https://github.com/acidgenomics/EggNOG/issues/
-License: MIT + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.6)
 Imports:
