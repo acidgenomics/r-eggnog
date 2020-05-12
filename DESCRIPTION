@@ -29,7 +29,6 @@ Imports:
     methods,
     utils
 Suggests:
-    acidroxygen (>= 0.1),
     BiocStyle (>= 2.12),
     knitr (>= 1.22),
     testthat (>= 2.2)
