@@ -18,7 +18,7 @@ orthologous groups constructed from numerous organisms. eggNOG stands for
 \strong{O}rthologous \strong{G}roups.
 }
 \note{
-Updated 2019-08-15.
+Updated 2020-07-23.
 }
 \examples{
 options(acid.test = TRUE)
