@@ -1,7 +1,6 @@
 #' @inherit EggNOG-class title description return
-#' @note Updated 2019-08-15.
+#' @note Updated 2020-07-23.
 #' @export
-#' @inheritParams acidroxygen::params
 #' @examples
 #' options(acid.test = TRUE)
 #' x <- EggNOG()
