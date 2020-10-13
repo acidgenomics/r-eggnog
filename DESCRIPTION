@@ -1,8 +1,8 @@
 Package: EggNOG
 Title: EggNOG
 Description: EggNOG database annotations.
-Version: 0.1.1
-Date: 2019-07-23
+Version: 0.1.2
+Date: 2020-10-13
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -23,18 +23,15 @@ Encoding: UTF-8
 Depends: R (>= 4.0)
 Imports:
     S4Vectors,
-    basejump (>= 0.12.8),
-    goalie (>= 0.4.5),
+    basejump (>= 0.13.2),
+    goalie (>= 0.4.9),
     stringr (>= 1.4),
     methods,
     utils
 Suggests:
     BiocStyle,
-    knitr (>= 1.29),
-    testthat (>= 2.3)
-Remotes:
-    acidgenomics/basejump,
-    acidgenomics/goalie
+    knitr,
+    testthat
 biocViews:
     GenomeAnnotation
 Roxygen: list(markdown = TRUE)

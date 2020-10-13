@@ -95,7 +95,7 @@ EggNOG <-  # nolint
             annotations = annotations
         )
         metadata(data) <- list(
-            version = packageVersion("EggNOG"),
+            version = packageVersion(packageName()),
             date = Sys.Date()
         )
         new(Class = "EggNOG", data)
