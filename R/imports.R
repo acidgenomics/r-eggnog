@@ -3,5 +3,5 @@
 #' @importFrom goalie assert hasInternet isString validate
 #' @importFrom methods as new setClass setValidity show
 #' @importFrom stringr str_match str_subset
-#' @importFrom utils packageVersion
+#' @importFrom utils packageName packageVersion
 NULL
