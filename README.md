@@ -13,7 +13,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) {
 install.packages(
     pkgs = "EggNOG",
     repos = c(
-        "r.acidgenomics.com",
+        "https://r.acidgenomics.com",
         BiocManager::repositories()
     )
 )
