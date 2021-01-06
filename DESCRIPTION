@@ -15,9 +15,9 @@ Authors@R: c(
         role = c("cph", "fnd")
     ))
 URL:
-    https://eggnog.acidgenomics.com/,
-    https://github.com/acidgenomics/EggNOG/
-BugReports: https://github.com/acidgenomics/EggNOG/issues/
+    https://r.acidgenomics.com/packages/eggnog/,
+    https://github.com/acidgenomics/r-eggnog/
+BugReports: https://github.com/acidgenomics/r-eggnog/issues/
 License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.6)
