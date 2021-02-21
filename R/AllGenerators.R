@@ -13,8 +13,6 @@ NULL
 
 
 
-## FIXME THIS DOESNT WORK FOR 4.0.
-
 ## Updated 2021-02-21.
 .eggnog4.5 <-  ## nolint
     function(baseURL) {
