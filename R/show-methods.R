@@ -11,7 +11,7 @@ NULL
 `show,EggNOG` <-  # nolint
     function(object) {
         showHeader(object)
-        ids <- sort(object[["annotations"]][["eggnogID"]])
+        ids <- sort(object[["annotations"]][["eggnogId"]])
         categories <- sort(object[["cogFunctionalCategories"]][["description"]])
         showSlotInfo(list(
             ids = ids,
