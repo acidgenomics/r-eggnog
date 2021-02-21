@@ -85,8 +85,8 @@ EggNOG <-  # nolint
                 "cogFunctionalCategory"
             )
             ]
-        colnames(x)[colnames(x) == "groupName"] <- "eggnogID"
-        x <- x[order(x[["eggnogID"]]), , drop = FALSE]
+        colnames(x)[colnames(x) == "groupName"] <- "eggnogId"
+        x <- x[order(x[["eggnogId"]]), , drop = FALSE]
         annotations <- x
 
         ## Return --------------------------------------------------------------
