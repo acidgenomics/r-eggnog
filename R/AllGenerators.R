@@ -2,9 +2,10 @@
 #' @inherit EggNOG-class title description return
 #' @note Updated 2021-02-21.
 #'
-#' @param release `character` or `NULL`.
-#'   EggNOG release version (e.g. "5.0").
-#'   If set `NULL`, will download the latest release.
+#' @param release `character(1)`.
+#'   EggNOG release version (e.g. "4.5").
+#'   Currently supported: "4.5", "4.1".
+#'   Support for EggNOG 5 will be added in next release.
 #'
 #' @examples
 #' x <- EggNOG()
