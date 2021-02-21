@@ -8,6 +8,9 @@
 EggNOG <-  # nolint
     function() {
         assert(hasInternet())
+
+        ## FIXME Need to use cache URL here instead.
+
         if (isTRUE(getOption("acid.test"))) {
             categoriesFile <- pasteURL(
                 basejumpTestsURL, "cog.txt",
