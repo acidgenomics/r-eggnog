@@ -1,12 +1,25 @@
+## FIXME The server has been reorganized, need to rethink...
+## FIXME 404 error:
+## http://eggnog5.embl.de/download/latest/COG_functional_categories.txt
+##
+## Versioned URL:
+## http://eggnog5.embl.de/download/eggnog_5.0/
+
+
+
 #' @inherit EggNOG-class title description return
-#' @note Updated 2020-07-23.
+#' @note Updated 2021-02-21.
 #' @export
+#'
+#' @param release `character` or `NULL`.
+#'   EggNOG release version (e.g. "5.0").
+#'   If set `NULL`, will download the latest release.
+#'
 #' @examples
-#' options(acid.test = TRUE)
 #' x <- EggNOG()
 #' print(x)
 EggNOG <-  # nolint
-    function() {
+    function(release = NULL) {
         assert(hasInternet())
         ## EggNOG database doesn't support HTTPS currently.
         baseURL <- pasteURL(
@@ -32,8 +45,10 @@ EggNOG <-  # nolint
         )
         ## Categories ----------------------------------------------------------
         pattern <- "^\\s\\[([A-Z])\\]\\s([A-Za-z\\s]+)\\s$"
-        ## FIXME USE IMPORT INSTEAD...
-        x <- readLines(categoriesFile)
+        x <- import(
+            file = .cacheIt(categoriesFile),
+            format = "lines"
+        )
         x <- str_subset(x, pattern)
         x <- str_match(x, pattern)
         x <- as(x, "DataFrame")
@@ -50,11 +65,13 @@ EggNOG <-  # nolint
             "cogFunctionalCategory",
             "consensusFunctionalDescription"
         )
-        ## euNOG: Eukaryota
-        eunog <- as(import(eunogFile, colnames = FALSE), "DataFrame")
+        ## euNOG: Eukaryota.
+        eunog <- import(file = .cacheIt(eunogFile), colnames = FALSE)
+        eunog <- as(eunog, "DataFrame")
         colnames(eunog) <- colnames
-        ## NOG: LUCA
-        nog <- as(import(nogFile, colnames = FALSE), "DataFrame")
+        ## NOG: LUCA.
+        nog <- import(file = .cacheIt(nogFile), colnames = FALSE)
+        nog <- as(nog, "DataFrame")
         ## Bind annotations.
         colnames(nog) <- colnames
         x <- rbind(eunog, nog)
@@ -71,12 +88,12 @@ EggNOG <-  # nolint
         annotations <- x
         ## Return --------------------------------------------------------------
         data <- SimpleList(
-            cogFunctionalCategories = categories,
-            annotations = annotations
+            "cogFunctionalCategories" = categories,
+            "annotations" = annotations
         )
         metadata(data) <- list(
-            version = packageVersion(packageName()),
-            date = Sys.Date()
+            "date" = Sys.Date(),
+            "version" = packageVersion(packageName())
         )
         new(Class = "EggNOG", data)
     }
