@@ -8,9 +8,9 @@
 
 
 
+#' @name EggNOG
 #' @inherit EggNOG-class title description return
 #' @note Updated 2021-02-21.
-#' @export
 #'
 #' @param release `character` or `NULL`.
 #'   EggNOG release version (e.g. "5.0").
@@ -19,18 +19,28 @@
 #' @examples
 #' x <- EggNOG()
 #' print(x)
+NULL
+
+
+
+#' @rdname EggNOG
+#' @export
 EggNOG <-  # nolint
     function(release = "4.5") {
         assert(
             hasInternet(),
             isString(release, nullOK = TRUE)
         )
+        ## FIXME NEED TO GET THE ACTUAL RELEASE FROM THE SYMLINK???
+        if (is.null(release)) {
+            release <- "latest"
+        }
         ## EggNOG database doesn't support HTTPS currently.
         baseURL <- pasteURL(
             "eggnog5.embl.de",
             "download",
             ifelse(
-                test = is.null(release),
+                test = identical(release, "latest"),
                 yes = "latest",
                 no = paste("eggnog", release, sep = "_")
             ),
@@ -103,7 +113,8 @@ EggNOG <-  # nolint
         )
         metadata(data) <- list(
             "date" = Sys.Date(),
-            "version" = packageVersion(packageName())
+            "release" = release,
+            "packageVersion" = packageVersion(packageName())
         )
         new(Class = "EggNOG", data)
     }
