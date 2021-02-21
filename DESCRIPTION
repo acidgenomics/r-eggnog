@@ -1,8 +1,8 @@
 Package: EggNOG
 Title: EggNOG
 Description: EggNOG database annotations.
-Version: 0.1.2
-Date: 2020-10-13
+Version: 0.1.3
+Date: 2021-02-21
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -15,10 +15,10 @@ Authors@R: c(
         role = c("cph", "fnd")
     ))
 URL:
-    https://eggnog.acidgenomics.com/,
-    https://github.com/acidgenomics/EggNOG/
-BugReports: https://github.com/acidgenomics/EggNOG/issues/
-License: GPL-3
+    https://r.acidgenomics.com/packages/eggnog/,
+    https://github.com/acidgenomics/r-eggnog/
+BugReports: https://github.com/acidgenomics/r-eggnog/issues/
+License: AGPL-3
 Encoding: UTF-8
 Depends: R (>= 4.0)
 Imports:
