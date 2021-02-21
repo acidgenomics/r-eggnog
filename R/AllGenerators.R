@@ -20,11 +20,20 @@
 #' x <- EggNOG()
 #' print(x)
 EggNOG <-  # nolint
-    function(release = NULL) {
-        assert(hasInternet())
+    function(release = "4.5") {
+        assert(
+            hasInternet(),
+            isString(release, nullOK = TRUE)
+        )
         ## EggNOG database doesn't support HTTPS currently.
         baseURL <- pasteURL(
-            "eggnog5.embl.de", "download", "latest",
+            "eggnog5.embl.de",
+            "download",
+            ifelse(
+                test = is.null(release),
+                yes = "latest",
+                no = paste("eggnog", release, sep = "_")
+            ),
             protocol = "http"
         )
         categoriesFile <- pasteURL(
