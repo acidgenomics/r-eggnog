@@ -1,4 +1,5 @@
-## FIXME The server has been reorganized, need to rethink...
+## FIXME The server has been reorganized as of v5.0, need to rethink...
+##
 ## FIXME 404 error:
 ## http://eggnog5.embl.de/download/latest/COG_functional_categories.txt
 ##
