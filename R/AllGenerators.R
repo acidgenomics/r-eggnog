@@ -8,52 +8,31 @@
 EggNOG <-  # nolint
     function() {
         assert(hasInternet())
-
-        ## FIXME Need to use cache URL here instead.
-
-        if (isTRUE(getOption("acid.test"))) {
-            categoriesFile <- pasteURL(
-                basejumpTestsURL, "cog.txt",
-                protocol = "none"
-            )
-            eunogFile <- pasteURL(
-                basejumpTestsURL, "eunog.tsv.gz",
-                protocol = "none"
-            )
-            nogFile <- pasteURL(
-                basejumpTestsURL, "nog.tsv.gz",
-                protocol = "none"
-            )
-        } else {
-            ## This is slow and unreliable on Travis, so cover locally.
-            ## EggNOG database doesn't support HTTPS currently.
-            ## nocov start
-            url <- pasteURL(
-                "eggnog5.embl.de", "download", "latest",
-                protocol = "http"
-            )
-            categoriesFile <- pasteURL(
-                url, "COG_functional_categories.txt",
-                protocol = "none"
-            )
-            eunogFile <- pasteURL(
-                url, "data", "euNOG", "euNOG.annotations.tsv.gz",
-                protocol = "none"
-            )
-            nogFile <- pasteURL(
-                url, "data", "NOG", "NOG.annotations.tsv.gz",
-                protocol = "none"
-            )
-            ## nocov end
-        }
+        ## EggNOG database doesn't support HTTPS currently.
+        baseURL <- pasteURL(
+            "eggnog5.embl.de", "download", "latest",
+            protocol = "http"
+        )
+        categoriesFile <- pasteURL(
+            baseURL, "COG_functional_categories.txt",
+            protocol = "none"
+        )
+        eunogFile <- pasteURL(
+            baseURL, "data", "euNOG", "euNOG.annotations.tsv.gz",
+            protocol = "none"
+        )
+        nogFile <- pasteURL(
+            baseURL, "data", "NOG", "NOG.annotations.tsv.gz",
+            protocol = "none"
+        )
         assert(
             isString(categoriesFile),
             isString(eunogFile),
             isString(nogFile)
         )
-
         ## Categories ----------------------------------------------------------
         pattern <- "^\\s\\[([A-Z])\\]\\s([A-Za-z\\s]+)\\s$"
+        ## FIXME USE IMPORT INSTEAD...
         x <- readLines(categoriesFile)
         x <- str_subset(x, pattern)
         x <- str_match(x, pattern)
@@ -62,7 +41,6 @@ EggNOG <-  # nolint
         colnames(x) <- c("letter", "description")
         x <- x[order(x[["letter"]]), , drop = FALSE]
         categories <- x
-
         ## Annotations ---------------------------------------------------------
         colnames <- c(
             "taxonomicLevel",
@@ -91,7 +69,6 @@ EggNOG <-  # nolint
         colnames(x)[colnames(x) == "groupName"] <- "eggnogId"
         x <- x[order(x[["eggnogId"]]), , drop = FALSE]
         annotations <- x
-
         ## Return --------------------------------------------------------------
         data <- SimpleList(
             cogFunctionalCategories = categories,
