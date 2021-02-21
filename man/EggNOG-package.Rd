@@ -9,9 +9,9 @@ EggNOG database annotations.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://eggnog.acidgenomics.com/}
-  \item \url{https://github.com/acidgenomics/EggNOG/}
-  \item Report bugs at \url{https://github.com/acidgenomics/EggNOG/issues/}
+  \item \url{https://r.acidgenomics.com/packages/eggnog/}
+  \item \url{https://github.com/acidgenomics/r-eggnog/}
+  \item Report bugs at \url{https://github.com/acidgenomics/r-eggnog/issues/}
 }
 
 }
