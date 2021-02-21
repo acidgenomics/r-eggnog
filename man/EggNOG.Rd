@@ -7,9 +7,10 @@
 EggNOG(release = "4.5")
 }
 \arguments{
-\item{release}{\code{character} or \code{NULL}.
-EggNOG release version (e.g. "5.0").
-If set \code{NULL}, will download the latest release.}
+\item{release}{\code{character(1)}.
+EggNOG release version (e.g. "4.5").
+Currently supported: "4.5", "4.1".
+Support for EggNOG 5 will be added in next release.}
 }
 \value{
 \code{EggNOG}.
