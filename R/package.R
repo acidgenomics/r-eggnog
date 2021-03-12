@@ -6,9 +6,8 @@
 #' @keywords internal
 #'
 #' @importFrom basejump SimpleList cacheURL import metadata<- packageName
-#'   packageVersion pasteURL rbind showHeader showSlotInfo
+#'   packageVersion pasteURL rbind showHeader showSlotInfo str_match str_subset
 #' @importFrom goalie assert hasInternet isAFile isAURL isString isSubset
 #'   validate
 #' @importFrom methods as new setClass setValidity show
-#' @importFrom stringr str_match str_subset
 "_PACKAGE"
