@@ -1,58 +1,44 @@
+#' @name EggNOG
 #' @inherit EggNOG-class title description return
-#' @note Updated 2019-08-15.
-#' @export
-#' @inheritParams acidroxygen::params
+#' @note Updated 2021-02-21.
+#'
+#' @param release `character(1)`.
+#'   EggNOG release version (e.g. "4.5").
+#'   Currently supported: "4.5", "4.1".
+#'   Support for EggNOG 5 will be added in next release.
+#'
 #' @examples
-#' options(acid.test = TRUE)
 #' x <- EggNOG()
 #' print(x)
-EggNOG <-  # nolint
-    function() {
-        assert(hasInternet())
-        if (isTRUE(getOption("acid.test"))) {
-            categoriesFile <- pasteURL(
-                basejumpTestsURL, "cog.txt",
-                protocol = "none"
-            )
-            eunogFile <- pasteURL(
-                basejumpTestsURL, "eunog.tsv.gz",
-                protocol = "none"
-            )
-            nogFile <- pasteURL(
-                basejumpTestsURL, "nog.tsv.gz",
-                protocol = "none"
-            )
-        } else {
-            ## This is slow and unreliable on Travis, so cover locally.
-            ## EggNOG database doesn't support HTTPS currently.
-            ## nocov start
-            url <- pasteURL(
-                "eggnog5.embl.de", "download", "latest",
-                protocol = "http"
-            )
-            categoriesFile <- pasteURL(
-                url, "COG_functional_categories.txt",
-                protocol = "none"
-            )
-            eunogFile <- pasteURL(
-                url, "data", "euNOG", "euNOG.annotations.tsv.gz",
-                protocol = "none"
-            )
-            nogFile <- pasteURL(
-                url, "data", "NOG", "NOG.annotations.tsv.gz",
-                protocol = "none"
-            )
-            ## nocov end
-        }
+NULL
+
+
+
+## Updated 2021-02-21.
+.eggnog4.5 <-  ## nolint
+    function(baseURL) {
+        categoriesFile <- pasteURL(
+            baseURL, "COG_functional_categories.txt",
+            protocol = "none"
+        )
+        eunogFile <- pasteURL(
+            baseURL, "data", "euNOG", "euNOG.annotations.tsv.gz",
+            protocol = "none"
+        )
+        nogFile <- pasteURL(
+            baseURL, "data", "NOG", "NOG.annotations.tsv.gz",
+            protocol = "none"
+        )
         assert(
             isString(categoriesFile),
             isString(eunogFile),
             isString(nogFile)
         )
-
-        ## Categories ----------------------------------------------------------
         pattern <- "^\\s\\[([A-Z])\\]\\s([A-Za-z\\s]+)\\s$"
-        x <- readLines(categoriesFile)
+        x <- import(
+            file = .cacheIt(categoriesFile),
+            format = "lines"
+        )
         x <- str_subset(x, pattern)
         x <- str_match(x, pattern)
         x <- as(x, "DataFrame")
@@ -60,8 +46,6 @@ EggNOG <-  # nolint
         colnames(x) <- c("letter", "description")
         x <- x[order(x[["letter"]]), , drop = FALSE]
         categories <- x
-
-        ## Annotations ---------------------------------------------------------
         colnames <- c(
             "taxonomicLevel",
             "groupName",
@@ -70,11 +54,13 @@ EggNOG <-  # nolint
             "cogFunctionalCategory",
             "consensusFunctionalDescription"
         )
-        ## euNOG: Eukaryota
-        eunog <- as(import(eunogFile, colnames = FALSE), "DataFrame")
+        ## euNOG: Eukaryota.
+        eunog <- import(file = .cacheIt(eunogFile), colnames = FALSE)
+        eunog <- as(eunog, "DataFrame")
         colnames(eunog) <- colnames
-        ## NOG: LUCA
-        nog <- as(import(nogFile, colnames = FALSE), "DataFrame")
+        ## NOG: LUCA.
+        nog <- import(file = .cacheIt(nogFile), colnames = FALSE)
+        nog <- as(nog, "DataFrame")
         ## Bind annotations.
         colnames(nog) <- colnames
         x <- rbind(eunog, nog)
@@ -85,19 +71,53 @@ EggNOG <-  # nolint
                 "consensusFunctionalDescription",
                 "cogFunctionalCategory"
             )
-            ]
-        colnames(x)[colnames(x) == "groupName"] <- "eggnogID"
-        x <- x[order(x[["eggnogID"]]), , drop = FALSE]
+        ]
+        colnames(x)[colnames(x) == "groupName"] <- "eggnogId"
+        x <- x[order(x[["eggnogId"]]), , drop = FALSE]
         annotations <- x
-
-        ## Return --------------------------------------------------------------
-        data <- SimpleList(
-            cogFunctionalCategories = categories,
-            annotations = annotations
+        SimpleList(
+            "cogFunctionalCategories" = categories,
+            "annotations" = annotations
         )
+    }
+
+
+
+## Updated 2021-02-21.
+.eggnog4.1 <- .eggnog4.5  # nolint
+
+
+
+#' @rdname EggNOG
+#' @export
+EggNOG <-  # nolint
+    function(release = "4.5") {
+        assert(
+            hasInternet(),
+            isString(release, nullOK = TRUE)
+        )
+        release <- match.arg(
+            arg = release,
+            choices = c(
+                "4.5",
+                "4.1"
+            )
+        )
+        ## EggNOG database doesn't support HTTPS currently.
+        baseURL <- pasteURL(
+            "eggnog5.embl.de",
+            "download",
+            paste("eggnog", release, sep = "_"),
+            protocol = "http"
+        )
+        funName <- paste0(".eggnog", release)
+        fun <- get(funName, inherits = TRUE)
+        assert(is.function(fun))
+        data <- fun(baseURL = baseURL)
         metadata(data) <- list(
-            version = packageVersion("EggNOG"),
-            date = Sys.Date()
+            "date" = Sys.Date(),
+            "release" = release,
+            "packageVersion" = packageVersion(packageName())
         )
         new(Class = "EggNOG", data)
     }
