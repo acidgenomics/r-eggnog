@@ -1,21 +1,23 @@
 # EggNOG
 
-EggNOG database annotations.
+[EggNOG][] database annotations.
 
 ## Installation
 
 ### [R][] method
 
 ```r
-if (!requireNamespace("remotes", quietly = TRUE)) {
-    install.packages("remotes")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
 }
-Sys.setenv(R_REMOTES_UPGRADE = "always")
-# Set `GITHUB_PAT` in `~/.Renviron` if you get a rate limit error.
-remotes::install_github("acidgenomics/EggNOG")
-remotes::update_packages()
+install.packages(
+    pkgs = "EggNOG",
+    repos = c(
+        "https://r.acidgenomics.com",
+        BiocManager::repositories()
+    )
+)
 ```
 
-[Bioconductor]: https://bioconductor.org/
-[BiocManager]: https://cran.r-project.org/package=BiocManager
-[R]: https://www.r-project.org/
+[eggnog]: http://eggnog.embl.de/
+[r]: https://www.r-project.org/

@@ -4,7 +4,13 @@
 \alias{EggNOG}
 \title{EggNOG database annotations}
 \usage{
-EggNOG()
+EggNOG(release = "4.5")
+}
+\arguments{
+\item{release}{\code{character(1)}.
+EggNOG release version (e.g. "4.5").
+Currently supported: "4.5", "4.1".
+Support for EggNOG 5 will be added in next release.}
 }
 \value{
 \code{EggNOG}.
@@ -18,10 +24,9 @@ orthologous groups constructed from numerous organisms. eggNOG stands for
 \strong{O}rthologous \strong{G}roups.
 }
 \note{
-Updated 2019-08-15.
+Updated 2021-02-21.
 }
 \examples{
-options(acid.test = TRUE)
 x <- EggNOG()
 print(x)
 }

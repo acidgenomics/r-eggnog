@@ -1,8 +1,8 @@
 #' Show an object
 #' @name show
-#' @inherit methods::show
+#' @inherit methods::show params return title
 #' @keywords internal
-#' @note Updated 2019-08-27.
+#' @note Updated 2020-07-23.
 NULL
 
 
@@ -11,7 +11,7 @@ NULL
 `show,EggNOG` <-  # nolint
     function(object) {
         showHeader(object)
-        ids <- sort(object[["annotations"]][["eggnogID"]])
+        ids <- sort(object[["annotations"]][["eggnogId"]])
         categories <- sort(object[["cogFunctionalCategories"]][["description"]])
         showSlotInfo(list(
             ids = ids,

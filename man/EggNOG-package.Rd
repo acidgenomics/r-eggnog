@@ -9,14 +9,14 @@ EggNOG database annotations.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://eggnog.acidgenomics.com/}
-  \item \url{https://github.com/acidgenomics/EggNOG/}
-  \item Report bugs at \url{https://github.com/acidgenomics/EggNOG/issues/}
+  \item \url{https://r.acidgenomics.com/packages/eggnog/}
+  \item \url{https://github.com/acidgenomics/r-eggnog/}
+  \item Report bugs at \url{https://github.com/acidgenomics/r-eggnog/issues/}
 }
 
 }
 \author{
-\strong{Maintainer}: Michael Steinbaugh \email{mike@steinbaugh.com} (0000-0002-2403-2221)
+\strong{Maintainer}: Michael Steinbaugh \email{mike@steinbaugh.com} (\href{https://orcid.org/0000-0002-2403-2221}{ORCID})
 
 Other contributors:
 \itemize{

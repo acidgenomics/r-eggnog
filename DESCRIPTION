@@ -1,8 +1,8 @@
 Package: EggNOG
 Title: EggNOG
 Description: EggNOG database annotations.
-Version: 0.1.0
-Date: 2019-08-27
+Version: 0.1.4
+Date: 2021-03-12
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -18,26 +18,17 @@ URL:
     https://r.acidgenomics.com/packages/eggnog/,
     https://github.com/acidgenomics/r-eggnog/
 BugReports: https://github.com/acidgenomics/r-eggnog/issues/
-License: GPL-3
+License: AGPL-3
 Encoding: UTF-8
-Depends: R (>= 3.6)
+Depends: R (>= 4.0)
 Imports:
-    basejump (>= 0.11.11),
-    goalie (>= 0.3.6),
-    S4Vectors (>= 0.22),
-    stringr (>= 1.4),
-    methods,
-    utils
+    basejump (>= 0.14.17),
+    goalie (>= 0.5.1),
+    methods
 Suggests:
-    acidroxygen (>= 0.1),
-    BiocStyle (>= 2.12),
-    knitr (>= 1.22),
-    testthat (>= 2.2)
-Remotes:
-    acidgenomics/basejump,
-    acidgenomics/goalie
+    testthat
 biocViews:
     GenomeAnnotation
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
-VignetteBuilder: knitr
+RoxygenNote: 7.1.1
+Additional_repositories: https://r.acidgenomics.com

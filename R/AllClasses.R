@@ -42,7 +42,7 @@ setValidity(
             identical(
                 x = colnames(object[["annotations"]]),
                 y = c(
-                    "eggnogID",
+                    "eggnogId",
                     "consensusFunctionalDescription",
                     "cogFunctionalCategory"
                 )
