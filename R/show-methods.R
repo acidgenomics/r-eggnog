@@ -25,6 +25,6 @@ NULL
 #' @export
 setMethod(
     f = "show",
-    signature = signature("EggNOG"),
+    signature = signature(object = "EggNOG"),
     definition = `show,EggNOG`
 )
