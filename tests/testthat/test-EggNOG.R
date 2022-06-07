@@ -1,5 +1,3 @@
-context("EggNOG")
-
 skip_if_not(hasInternet())
 
 object <- EggNOG()
