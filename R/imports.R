@@ -25,12 +25,6 @@ NULL
 #' validate
 #' @importFrom methods as new setClass setValidity
 #' @importFrom pipette cacheURL
+#' @importFrom stringi stri_match_first_regex stri_subset_regex
 #' @importFrom utils packageName packageVersion
-NULL
-
-
-
-## FIXME Need to rework these
-
-#' @importFrom stringr str_match str_subset
 NULL

@@ -39,8 +39,8 @@ NULL
             file = .cacheIt(categoriesFile),
             format = "lines"
         )
-        x <- str_subset(x, pattern)
-        x <- str_match(x, pattern)
+        x <- stri_subset_regex(str = x, pattern = pattern)
+        x <- stri_match_first_regex(str = x, pattern = pattern)
         x <- as(x, "DataFrame")
         x <- x[, c(2L, 3L)]
         colnames(x) <- c("letter", "description")
