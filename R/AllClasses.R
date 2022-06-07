@@ -25,7 +25,7 @@
 #' @return `EggNOG`.
 setClass(
     Class = "EggNOG",
-    contains = "SimpleDataFrameList"
+    contains = "SimpleDFrameList"
 )
 setValidity(
     Class = "EggNOG",
