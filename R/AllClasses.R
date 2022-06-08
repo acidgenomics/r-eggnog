@@ -10,11 +10,11 @@
 #' This class extends `list` and contains:
 #'
 #' 1. `"cogFunctionalCategories"`: **C**luster of **O**rthologous **G**roups
-#'    (COG) functional category information.
+#' (COG) functional category information.
 #' 2. `"annotations"`: up-to-date functional descriptions and categories
-#'    for **Eu**karyotes **N**on-supervised **O**rthologous **G**roups (euNOG)
-#'    and **N**on-supervised **O**rthologous **G**roups (NOG) protein
-#'    identifiers.
+#' for **Eu**karyotes **N**on-supervised **O**rthologous **G**roups (euNOG)
+#' and **N**on-supervised **O**rthologous **G**roups (NOG) protein
+#' identifiers.
 #'
 #' The [EggNOG README](http://eggnogdb.embl.de/download/latest/README.txt)
 #' contains additional useful reference information.

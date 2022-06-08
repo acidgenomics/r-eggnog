@@ -8,7 +8,7 @@ NULL
 
 
 ## Updated 2019-08-18.
-`show,EggNOG` <-  # nolint
+`show,EggNOG` <- # nolint
     function(object) {
         showHeader(object)
         ids <- sort(object[["annotations"]][["eggnogId"]])
