@@ -1,15 +1,11 @@
-skip_if_not(hasInternet())
-
-object <- EggNOG()
-
-test_that("EggNOG", {
-    expect_s4_class(object, "EggNOG")
-    expect_identical(length(object), 2L)
-})
-
-test_that("show", {
-    expect_output(
-        object = show(object),
-        regexp = "EggNOG"
-    )
-})
+for (release in eval(formals("EggNOG")[["release"]])) {
+    test_that(paste("EggNOG", release), {
+        object <- EggNOG(release = release)
+        expect_s4_class(object, "EggNOG")
+        expect_identical(length(object), 2L)
+        expect_output(
+            object = show(object),
+            regexp = "EggNOG"
+        )
+    })
+}
