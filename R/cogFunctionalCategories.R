@@ -1,14 +1,12 @@
-## FIXME Refer to the flat file on EggNOG server.
-## FIXME Just save this as a CSV file and load..
-
-
-
 #' COG functional categories
+#'
+#' Letter code mappings of COG functional categories.
 #'
 #' @export
 #' @note Updated 2022-06-08.
 #'
 #' @return `DataFrame`.
+#' Contains columns `"letter"`, `"description"`, and `"class"`.
 #'
 #' @seealso
 #' - http://eggnog5.embl.de/download/eggnog_4.5/COG_functional_categories.txt

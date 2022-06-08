@@ -8,9 +8,10 @@ cogFunctionalCategories()
 }
 \value{
 \code{DataFrame}.
+Contains columns \code{"letter"}, \code{"description"}, and \code{"class"}.
 }
 \description{
-COG functional categories
+Letter code mappings of COG functional categories.
 }
 \note{
 Updated 2022-06-08.
