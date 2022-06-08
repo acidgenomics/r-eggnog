@@ -2,7 +2,7 @@
 .cacheIt <- function(file) {
     assert(isString(file))
     if (isAURL(file)) {
-        x <- cacheURL(url = file, pkg = packageName())
+        x <- cacheURL(url = file, pkg = .pkgName)
     } else {
         x <- file
     }

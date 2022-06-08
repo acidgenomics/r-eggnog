@@ -17,7 +17,7 @@
 cogFunctionalCategories <- function() {
     readRDS(system.file(
         "extdata", "cog-functional-categories.rds",
-        package = packageName(),
+        package = .pkgName,
         mustWork = TRUE
     ))
 }

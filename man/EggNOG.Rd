@@ -4,13 +4,11 @@
 \alias{EggNOG}
 \title{EggNOG database annotations}
 \usage{
-EggNOG(release = c("5.0", "4.5", "4.1", "4.0"))
+EggNOG(release = c("5.0", "4.5", "4.1"))
 }
 \arguments{
 \item{release}{\code{character(1)}.
-EggNOG release version (e.g. "4.5").
-Currently supported: "4.5", "4.1".
-Support for EggNOG 5 will be added in next release.}
+EggNOG release version.}
 }
 \value{
 \code{EggNOG}.
@@ -27,6 +25,6 @@ orthologous groups constructed from numerous organisms. eggNOG stands for
 Updated 2022-06-07.
 }
 \examples{
-x <- EggNOG()
-print(x)
+object <- EggNOG()
+print(object)
 }
