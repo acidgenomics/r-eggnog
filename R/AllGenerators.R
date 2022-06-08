@@ -134,7 +134,7 @@ EggNOG <-  # nolint
                 )
             ),
             envir = asNamespace(.pkgName),
-            inherits = FALSE,
+            inherits = FALSE
         )
         assert(is.function(what))
         args <- list("baseUrl" = baseUrl)
