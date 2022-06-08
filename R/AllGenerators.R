@@ -3,7 +3,7 @@
 #' @note Updated 2022-06-07.
 #'
 #' @param release `character(1)`.
-#'   EggNOG release version.
+#' EggNOG release version.
 #'
 #' @examples
 #' object <- EggNOG()
@@ -19,25 +19,26 @@ NULL
 #'
 #' @details
 #' May want to convert "28H50" identifier to "ENOG5028H51", for example.
-.annotations50 <- function(baseUrl) {
-    df <- import(
-        file = .cacheIt(pasteURL(
-            baseUrl,
-            "per_tax_level",
-            "1",
-            "1_annotations.tsv.gz",
-            protocol = "none"
-        )),
-        colnames = c(
-            "taxonomicLevel",
-            "eggnogId", # groupName
-            "cogFunctionalCategory",
-            "consensusFunctionalDescription"
-        ),
-        engine = "data.table"
-    )
-    df
-}
+.annotations50 <-
+    function(baseUrl) {
+        df <- import(
+            file = .cacheIt(pasteURL(
+                baseUrl,
+                "per_tax_level",
+                "1",
+                "1_annotations.tsv.gz",
+                protocol = "none"
+            )),
+            colnames = c(
+                "taxonomicLevel",
+                "eggnogId", # groupName
+                "cogFunctionalCategory",
+                "consensusFunctionalDescription"
+            ),
+            engine = "data.table"
+        )
+        df
+    }
 
 
 
@@ -45,7 +46,7 @@ NULL
 #'
 #' @note Updated 2022-06-08.
 #' @noRd
-.annotations45 <-  ## nolint
+.annotations45 <-
     function(baseUrl) {
         colnames <- c(
             "taxonomicLevel",
@@ -101,19 +102,20 @@ NULL
 #' @examples
 #' object <- .cogFunctionalCategories()
 #' print(object)
-.cogFunctionalCategories <- function() {
-    readRDS(system.file(
-        "extdata", "cog-functional-categories.rds",
-        package = .pkgName,
-        mustWork = TRUE
-    ))
-}
+.cogFunctionalCategories <-
+    function() {
+        readRDS(system.file(
+            "extdata", "cog-functional-categories.rds",
+            package = .pkgName,
+            mustWork = TRUE
+        ))
+    }
 
 
 
 #' @rdname EggNOG
 #' @export
-EggNOG <-  # nolint
+EggNOG <- # nolint
     function(release = c("5.0", "4.5", "4.1")) {
         release <- match.arg(release)
         ## EggNOG database doesn't support HTTPS currently.
