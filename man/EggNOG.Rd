@@ -4,7 +4,7 @@
 \alias{EggNOG}
 \title{EggNOG database annotations}
 \usage{
-EggNOG(release = "5.0")
+EggNOG(release = c("5.0", "4.5", "4.1", "4.0"))
 }
 \arguments{
 \item{release}{\code{character(1)}.

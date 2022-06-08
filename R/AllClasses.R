@@ -37,7 +37,7 @@ setValidity(
             ),
             identical(
                 x = colnames(object[["cogFunctionalCategories"]]),
-                y = c("letter", "description")
+                y = c("letter", "description", "class")
             ),
             identical(
                 x = colnames(object[["annotations"]]),
