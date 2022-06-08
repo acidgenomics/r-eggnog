@@ -22,7 +22,7 @@ License: AGPL-3
 Encoding: UTF-8
 Depends: R (>= 4.2)
 Imports:
-    AcidBase
+    AcidBase,
     BiocGenerics,
     IRanges,
     S4Vectors,
