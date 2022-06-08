@@ -22,8 +22,12 @@ License: AGPL-3
 Encoding: UTF-8
 Depends: R (>= 4.2)
 Imports:
+    BiocGenerics,
+    S4Vectors,
     goalie,
-    methods
+    methods,
+    pipette,
+    utils
 Suggests:
     testthat (>= 3.0.0)
 Roxygen: list(markdown = TRUE)
