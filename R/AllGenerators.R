@@ -12,9 +12,13 @@ NULL
 
 
 
-## NOTE May want to convert "28H50" identifier to "ENOG5028H51", for example.
-
-## Updated 2022-06-07.
+#' EggNOG 5.0 annotations
+#'
+#' @note Updated 2022-06-07.
+#' @noRd
+#'
+#' @details
+#' May want to convert "28H50" identifier to "ENOG5028H51", for example.
 .annotations50 <- function(baseUrl) {
     df <- import(
         file = .cacheIt(pasteURL(
@@ -37,7 +41,10 @@ NULL
 
 
 
-## Updated 2022-06-08.
+#' EggNOG 4.5 annotations
+#'
+#' @note Updated 2022-06-08.
+#' @noRd
 .annotations45 <-  ## nolint
     function(baseUrl) {
         colnames <- c(
@@ -75,6 +82,32 @@ NULL
 
 ## Updated 2022-06-07.
 .annotations41 <- .annotations45
+
+
+
+#' COG functional categories
+#'
+#' Letter code mappings of COG functional categories.
+#'
+#' @noRd
+#' @note Updated 2022-06-08.
+#'
+#' @return `DataFrame`.
+#' Contains columns `"letter"`, `"description"`, and `"class"`.
+#'
+#' @seealso
+#' - http://eggnog5.embl.de/download/eggnog_4.5/COG_functional_categories.txt
+#'
+#' @examples
+#' object <- .cogFunctionalCategories()
+#' print(object)
+.cogFunctionalCategories <- function() {
+    readRDS(system.file(
+        "extdata", "cog-functional-categories.rds",
+        package = .pkgName,
+        mustWork = TRUE
+    ))
+}
 
 
 
@@ -117,7 +150,7 @@ EggNOG <-  # nolint
         ]
         df <- df[order(df[["eggnogId"]]), , drop = FALSE]
         annotations <- df
-        categories <- cogFunctionalCategories()
+        categories <- .cogFunctionalCategories()
         object <- SimpleList(
             "cogFunctionalCategories" = categories,
             "annotations" = annotations
