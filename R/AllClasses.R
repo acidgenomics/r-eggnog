@@ -16,9 +16,6 @@
 #' and **N**on-supervised **O**rthologous **G**roups (NOG) protein
 #' identifiers.
 #'
-#' The [EggNOG README](http://eggnogdb.embl.de/download/latest/README.txt)
-#' contains additional useful reference information.
-#'
 #' @note Updated 2019-08-13.
 #' @export
 #'
