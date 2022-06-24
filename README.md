@@ -20,5 +20,19 @@ install.packages(
 )
 ```
 
+### [Docker][] method
+
+```sh
+image='acidgenomics/r-packages:eggnog'
+workdir='/mnt/work'
+docker pull "$image"
+docker run -it \
+    --volume="${PWD}:${workdir}" \
+    --workdir="$workdir" \
+    "$image" \
+    R
+```
+
+[docker]: https://www.docker.com/
 [eggnog]: http://eggnog.embl.de/
 [r]: https://www.r-project.org/
