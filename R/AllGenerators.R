@@ -22,7 +22,7 @@ NULL
 .annotations50 <-
     function(baseUrl) {
         df <- import(
-            file = .cacheIt(pasteURL(
+            con = .cacheIt(pasteURL(
                 baseUrl,
                 "per_tax_level",
                 "1",
@@ -58,7 +58,7 @@ NULL
         )
         ## euNOG: Eukaryota.
         eunog <- import(
-            file = .cacheIt(pasteURL(
+            con = .cacheIt(pasteURL(
                 baseUrl, "data", "euNOG", "euNOG.annotations.tsv.gz",
                 protocol = "none"
             )),
@@ -67,7 +67,7 @@ NULL
         colnames(eunog) <- colnames
         ## NOG: LUCA.
         nog <- import(
-            file = .cacheIt(pasteURL(
+            con = .cacheIt(pasteURL(
                 baseUrl, "data", "NOG", "NOG.annotations.tsv.gz",
                 protocol = "none"
             )),
