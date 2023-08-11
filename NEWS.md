@@ -1,3 +1,11 @@
+## EggNog 0.2.2 (2023-08-11)
+
+Minor changes:
+
+- Now requiring R 4.3 / Bioconductor 3.17.
+- Updated lintr checks.
+- Now running testthat unit tests in parallel.
+
 ## EggNOG 0.2.1 (2023-05-19)
 
 Minor changes:
