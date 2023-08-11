@@ -1,8 +1,8 @@
 Package: EggNOG
 Title: EggNOG
 Description: EggNOG database annotations.
-Version: 0.2.1
-Date: 2023-05-19
+Version: 0.2.2.9000
+Date: 2023-08-11
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -20,19 +20,20 @@ URL:
 BugReports: https://github.com/acidgenomics/r-eggnog/issues/
 License: AGPL-3
 Encoding: UTF-8
-Depends: R (>= 4.2)
+Depends: R (>= 4.3)
 Imports:
-    AcidBase,
-    BiocGenerics,
-    IRanges,
-    S4Vectors,
-    goalie,
+    AcidBase (>= 0.6.18),
+    BiocGenerics (>= 0.46.0),
+    IRanges (>= 2.34.0),
+    S4Vectors (>= 0.38.0),
+    goalie (>= 0.6.14),
+    pipette (>= 0.11.1),
     methods,
-    pipette,
     utils
 Suggests:
-    testthat (>= 3.0.0)
+    testthat (>= 3.1.10)
 Additional_repositories: https://r.acidgenomics.com
 Config/testthat/edition: 3
+Config/testthat/parallel: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
