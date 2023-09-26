@@ -26,7 +26,6 @@ Imports:
     BiocGenerics (>= 0.46.0),
     IRanges (>= 2.34.0),
     S4Vectors (>= 0.38.0),
-    data.table,
     goalie (>= 0.6.14),
     pipette (>= 0.11.1),
     methods,
