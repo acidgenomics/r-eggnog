@@ -21,6 +21,7 @@ NULL
 #' May want to convert "28H50" identifier to "ENOG5028H51", for example.
 .annotations50 <-
     function(baseUrl) {
+        ## FIXME Remove dependency on data.table here
         df <- import(
             con = .cacheIt(pasteURL(
                 baseUrl,
