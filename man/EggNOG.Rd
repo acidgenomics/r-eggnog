@@ -22,7 +22,7 @@ orthologous groups constructed from numerous organisms. eggNOG stands for
 \strong{O}rthologous \strong{G}roups.
 }
 \note{
-Updated 2022-06-07.
+Updated 2023-09-28.
 }
 \examples{
 object <- EggNOG()

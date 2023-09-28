@@ -1,6 +1,6 @@
 #' @name EggNOG
 #' @inherit EggNOG-class title description return
-#' @note Updated 2022-06-07.
+#' @note Updated 2023-09-28.
 #'
 #' @param release `character(1)`.
 #' EggNOG release version.
@@ -14,14 +14,13 @@ NULL
 
 #' EggNOG 5.0 annotations
 #'
-#' @note Updated 2023-09-26.
+#' @note Updated 2023-09-28.
 #' @noRd
 #'
 #' @details
 #' May want to convert "28H50" identifier to "ENOG5028H51", for example.
 .annotations50 <-
     function(baseUrl) {
-        ## FIXME Likely need to parse this in as lines.
         df <- import(
             con = .cacheIt(pasteUrl(
                 baseUrl,
