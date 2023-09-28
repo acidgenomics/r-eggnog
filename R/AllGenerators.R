@@ -23,7 +23,7 @@ NULL
     function(baseUrl) {
         ## FIXME Likely need to parse this in as lines.
         df <- import(
-            con = .cacheIt(pasteURL(
+            con = .cacheIt(pasteUrl(
                 baseUrl,
                 "per_tax_level",
                 "1",
@@ -58,7 +58,7 @@ NULL
         )
         ## euNOG: Eukaryota.
         eunog <- import(
-            con = .cacheIt(pasteURL(
+            con = .cacheIt(pasteUrl(
                 baseUrl, "data", "euNOG", "euNOG.annotations.tsv.gz",
                 protocol = "none"
             )),
@@ -67,7 +67,7 @@ NULL
         colnames(eunog) <- colnames
         ## NOG: LUCA.
         nog <- import(
-            con = .cacheIt(pasteURL(
+            con = .cacheIt(pasteUrl(
                 baseUrl, "data", "NOG", "NOG.annotations.tsv.gz",
                 protocol = "none"
             )),
@@ -119,7 +119,7 @@ EggNOG <- # nolint
     function(release = c("5.0", "4.5", "4.1")) {
         release <- match.arg(release)
         ## EggNOG database doesn't support HTTPS currently.
-        baseUrl <- pasteURL(
+        baseUrl <- pasteUrl(
             "eggnog5.embl.de",
             "download",
             paste("eggnog", release, sep = "_"),
