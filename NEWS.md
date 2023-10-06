@@ -1,4 +1,13 @@
-## EggNog 0.2.2 (2023-08-11)
+## EggNOG 0.3.0 (2023-10-06)
+
+Major changes:
+
+- Bumping version due to significant changes in Acid Genomics dependency
+  packages.
+- Migrated release-specific checks to longtests.
+- Acid Genomics imports now use strict camel case formatting.
+
+## EggNOG 0.2.2 (2023-08-11)
 
 Minor changes:
 
