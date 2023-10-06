@@ -1,3 +1,10 @@
+## FIXME Need to deal with this deprecation issue:
+## Warning: The dim() method for DataFrameList objects
+## is deprecated. Please use dims() on these
+## objects instead.
+
+
+
 #' @name EggNOG
 #' @inherit EggNOG-class title description return
 #' @note Updated 2023-09-28.

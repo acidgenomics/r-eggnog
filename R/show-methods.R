@@ -10,6 +10,8 @@ NULL
 ## Updated 2019-08-18.
 `show,EggNOG` <- # nolint
     function(object) {
+        ## FIXME This function doesn't work correctly with DataFrameList...
+        ## need to fix this.
         showHeader(object)
         ids <- sort(object[["annotations"]][["eggnogId"]])
         categories <- sort(object[["cogFunctionalCategories"]][["description"]])
