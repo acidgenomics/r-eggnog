@@ -35,6 +35,6 @@ R
 ```
 
 [bioconda]: https://bioconda.github.io/
-[conda]: https://conda.io/
+[conda]: https://docs.conda.io/
 [eggnog]: http://eggnog.embl.de/
 [r]: https://www.r-project.org/
