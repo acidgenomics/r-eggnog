@@ -31,7 +31,7 @@ Imports:
     pipette,
     utils
 Suggests:
-    testthat (>= 3.1.10)
+    testthat
 Additional_repositories: https://r.acidgenomics.com
 Config/testthat/edition: 3
 Config/testthat/parallel: true
