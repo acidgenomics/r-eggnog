@@ -20,15 +20,15 @@ URL:
 BugReports: https://github.com/acidgenomics/r-eggnog/issues/
 License: AGPL-3
 Encoding: UTF-8
-Depends: R (>= 4.3)
+Depends: R (>= 4.0)
 Imports:
-    AcidBase (>= 0.7.1),
-    BiocGenerics (>= 0.46.0),
-    IRanges (>= 2.34.0),
-    S4Vectors (>= 0.38.0),
-    goalie (>= 0.7.3),
-    pipette (>= 0.14.1),
+    AcidBase,
+    BiocGenerics,
+    IRanges,
+    S4Vectors,
+    goalie,
     methods,
+    pipette,
     utils
 Suggests:
     testthat (>= 3.1.10)
