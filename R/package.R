@@ -7,12 +7,10 @@
 "_PACKAGE"
 
 
-
 ## S4 classes ==================================================================
 
 #' @importClassesFrom IRanges SimpleDFrameList
 NULL
-
 
 
 ## S4 generics and methods =====================================================
@@ -24,7 +22,6 @@ NULL
 #'
 #' @importMethodsFrom pipette import
 NULL
-
 
 
 ## Standard functions ==========================================================

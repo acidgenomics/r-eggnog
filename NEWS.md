@@ -1,3 +1,13 @@
+## EggNOG 0.3.1 (2025-05-25)
+
+Maintenance release.
+
+Minor changes:
+
+- Reverted R minimum dependency to 4.0 for better backward compatibility on
+  legacy systems.
+- Now using air for automatic formatting.
+
 ## EggNOG 0.3.0 (2023-10-06)
 
 Major changes:

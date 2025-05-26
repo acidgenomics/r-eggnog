@@ -6,7 +6,6 @@
 NULL
 
 
-
 ## Updated 2019-08-18.
 `show,EggNOG` <- # nolint
     function(object) {
@@ -18,7 +17,6 @@ NULL
             categories = categories
         ))
     }
-
 
 
 #' @rdname show
