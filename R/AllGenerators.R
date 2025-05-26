@@ -11,7 +11,6 @@
 NULL
 
 
-
 #' EggNOG 5.0 annotations
 #'
 #' @note Updated 2023-09-28.
@@ -40,7 +39,6 @@ NULL
     }
 
 
-
 #' EggNOG 4.5 annotations
 #'
 #' @note Updated 2022-06-08.
@@ -58,7 +56,10 @@ NULL
         ## euNOG: Eukaryota.
         eunog <- import(
             con = .cacheIt(pasteUrl(
-                baseUrl, "data", "euNOG", "euNOG.annotations.tsv.gz",
+                baseUrl,
+                "data",
+                "euNOG",
+                "euNOG.annotations.tsv.gz",
                 protocol = "none"
             )),
             colnames = FALSE
@@ -67,7 +68,10 @@ NULL
         ## NOG: LUCA.
         nog <- import(
             con = .cacheIt(pasteUrl(
-                baseUrl, "data", "NOG", "NOG.annotations.tsv.gz",
+                baseUrl,
+                "data",
+                "NOG",
+                "NOG.annotations.tsv.gz",
                 protocol = "none"
             )),
             colnames = FALSE
@@ -79,10 +83,8 @@ NULL
     }
 
 
-
 ## Updated 2022-06-07.
 .annotations41 <- .annotations45
-
 
 
 #' COG functional categories
@@ -104,12 +106,12 @@ NULL
 .cogFunctionalCategories <-
     function() {
         readRDS(system.file(
-            "extdata", "cog-functional-categories.rds",
+            "extdata",
+            "cog-functional-categories.rds",
             package = .pkgName,
             mustWork = TRUE
         ))
     }
-
 
 
 #' @rdname EggNOG
@@ -141,8 +143,7 @@ EggNOG <- # nolint
         args <- list("baseUrl" = baseUrl)
         df <- do.call(what = what, args = args)
         df <- as(df, "DataFrame")
-        df <- df[
-            ,
+        df <- df[,
             c(
                 "eggnogId",
                 "consensusFunctionalDescription",
