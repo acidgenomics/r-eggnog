@@ -2,6 +2,7 @@
 % Please edit documentation in R/package.R
 \docType{package}
 \name{EggNOG-package}
+\alias{EggNOG-package}
 \title{EggNOG}
 \description{
 EggNOG database annotations.
