@@ -29,7 +29,7 @@ NULL
 #' @importFrom AcidBase pasteUrl showHeader showSlotInfo
 #' @importFrom S4Vectors SimpleList
 #' @importFrom goalie assert hasInternet isAFile isAUrl isString isSubset
-#' validate
+#' @importFrom goalie validate
 #' @importFrom methods as new setClass setValidity
 #' @importFrom pipette cacheUrl
 #' @importFrom utils packageName packageVersion
